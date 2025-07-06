@@ -7,21 +7,20 @@ def isrectangular(a, b, c):
     else:
         return False
 
+def test_1():    # Позитивные проверки с перемешанными сторонами
+    assert isrectangular(3, 4, 5) == True
+    assert isrectangular(3, 5, 4) == True
+    assert isrectangular(5, 4, 3) == True
 
-# Позитивные проверки с перемешанными сторонами
-assert isrectangular(3, 4, 5) == True
-assert isrectangular(3, 5, 4) == True
-assert isrectangular(5, 4, 3) == True
+    # НЕ прямоугольный треугольник
+    assert isrectangular(3, 3, 3) == False
+    assert isrectangular(3, 3, 5) == False
 
-# НЕ прямоугольный треугольник
-assert isrectangular(3, 3, 3) == False
-assert isrectangular(3, 3, 5) == False
+    # Отрицательная длина стороны
+    assert isrectangular(-3, -4, -5) == False
+    assert isrectangular(-3, 4, 5) == False
 
-# Отрицательная длина стороны
-assert isrectangular(-3, -4, -5) == False
-assert isrectangular(-3, 4, 5) == False
-
-# Нулевая длина стороны
-assert isrectangular(0, 4, 5) == False
-assert isrectangular(0, 0, 0) == False
+    # Нулевая длина стороны
+    assert isrectangular(0, 4, 5) == False
+    assert isrectangular(0, 0, 0) == False
 
